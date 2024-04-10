@@ -1,7 +1,6 @@
-Sustav za pronalaženje manifestacija
+Sustav za unos manifestacija
 
-Sustav za obrtnike i organizatore manifestacije. Obrtnici mogu pregledati koje za njih prigodne manifestacije postoje u određenom periodu te
-se na istu prijaviti ukoliko žele, a organizatori mogu postaviti svoju manifestaciju u sustav i napisati detalje kako bi bili vidljivi obrtnicima.
+Sustav za organizatore manifestacije. CRUD funkcionalnosti su unos manifestacije, mogućnost izmjene manifestacije, pregled manifestacije, filtriranje unesenih manifestacija po vrsti djelatnosti za koje su namijenjene te brisanje vlastite manifestacije.
 
 Klase:
-Manifestacija{id_manifestacija, naziv, opis, vrsta_djelatnosti, broj_prijavljenih}
+Manifestacija{id_manifestacija, naziv, opis, vrsta_djelatnosti, datum}
