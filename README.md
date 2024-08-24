@@ -20,4 +20,5 @@
 
 <h1>Usecase dijagram</h1>
 <hr/>
-![Usecase](https://github.com/user-attachments/assets/35613b9f-deab-47d3-8f1a-eee5ada500ed)
+
+![Usecase](https://github.com/user-attachments/assets/0504ea5e-49a9-4c9f-8b05-feadb8f42465)
