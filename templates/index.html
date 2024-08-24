@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+   
+   <head>
+    <title>Unos manifestacija</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+   </head>
+
+   <body>
+  <div class="forma_okvir">
+    <div class="forma">
+      <u></ul><h1 class="naslov_forma">Dodaj event</h1></u>
+    <form action="/dodaj_event" method="post" class="forma">
+      <label for="naziv">Naziv:</label>
+      <input type="text" name="naziv" required/><br/>
+      <label for="opis">Opis:</label>
+      <input type="text" name="opis"/><br/>
+      <label for="vrsta_djelatnosti">Djelatnost:</label>
+      <select name="vrsta_djelatnosti" required>
+        <option value="Koncert">Koncert</option>
+        <option value="Izložba">Izložba</option>
+        <option value="Predavanje">Predavanje</option>
+        <option value="Sajam">Sajam</option>
+        <option value="Ostalo">Ostalo</option>
+    </select> <br/>
+      <label for="datum">Datum:</label>
+      <input type="date" name="datum" required/><br/>
+      <button type="submit" class="dodaj">Dodaj event</button>
+    </form>
+    </div>
+  </div>
+
+    <h1>Svi eventi</h1>
+    <details>
+      <summary>
+        <span>Popis</span>
+    </summary>
+    <table>
+      <thead>
+          <tr>
+              <th>Naziv</th>
+              <th>Opis</th>
+              <th>Djelatnost</th>
+              <th>Datum</th>
+              <th>Akcije</th>
+          </tr>
+      </thead>
+      <tbody>
+    
+      {% for event in eventi %}
+      <tr>
+          <td>{{ event.naziv }} </td>
+          <td>{{ event.opis }} </td>
+          <td>{{ event.vrsta_djelatnosti }} </td> 
+          <td>{{ event.datum}}</td> 
+          <td>
+          <form action="/obrisi_event/{{ event.id }}" method="post">
+            <span><button type="submit">Obriši event</button></span>
+          </form>
+        <br/>
+          <a href="{{ url_for('uredi_event', event_id=event.id) }}"><button>Uredi</button></a>
+        </td> 
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</details>
+
+<h1>Koncerti</h1>
+   <details>
+    <summary>
+      <span>Popis</span>
+  </summary>
+    <table>
+      <thead>
+          <tr>
+              <th>Naziv</th>
+              <th>Opis</th>
+              <th>Djelatnost</th>
+              <th>Datum</th>
+              <th>Akcije</th>
+          </tr>
+      </thead>
+      <tbody>
+    
+      {% for event in eventi %}
+      {% if event.vrsta_djelatnosti=="Koncert" %}
+      <tr>
+          <td>{{ event.naziv }} </td>
+          <td>{{ event.opis }} </td>
+          <td>{{ event.vrsta_djelatnosti }} </td> 
+          <td>{{ event.datum}}</td> 
+          <td>
+          <form action="/obrisi_event/{{ event.id }}" method="post">
+            <span><button type="submit">Obriši event</button></span>
+          </form>
+        <br/>
+          <a href="{{ url_for('uredi_event', event_id=event.id) }}"><button>Uredi</button></a>
+        </td> 
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</details> 
+  <h1>Izložbe</h1>
+  <details>
+    <summary>
+      <span>Popis</span>
+  </summary>
+    <table>
+      <thead>
+          <tr>
+              <th>Naziv</th>
+              <th>Opis</th>
+              <th>Djelatnost</th>
+              <th>Datum</th>
+              <th>Akcije</th>
+          </tr>
+      </thead>
+      <tbody>
+    
+      {% for event in eventi %}
+      {% if event.vrsta_djelatnosti=="Izložba" %}
+      <tr>
+          <td>{{ event.naziv }} </td>
+          <td>{{ event.opis }} </td>
+          <td>{{ event.vrsta_djelatnosti }} </td> 
+          <td>{{ event.datum}}</td> 
+          <td>
+          <form action="/obrisi_event/{{ event.id }}" method="post">
+            <span><button type="submit">Obriši event</button></span>
+          </form>
+        <br/>
+          <a href="{{ url_for('uredi_event', event_id=event.id) }}"><button>Uredi</button></a>
+        </td> 
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</details>
+
+  <h1>Predavanja</h1>
+  <details>
+    <summary>
+      <span>Popis</span>
+  </summary>
+    <table>
+      <thead>
+          <tr>
+              <th>Naziv</th>
+              <th>Opis</th>
+              <th>Djelatnost</th>
+              <th>Datum</th>
+              <th>Akcije</th>
+          </tr>
+      </thead>
+      <tbody>
+    
+      {% for event in eventi %}
+      {% if event.vrsta_djelatnosti=="Predavanje" %}
+      <tr>
+          <td>{{ event.naziv }} </td>
+          <td>{{ event.opis }} </td>
+          <td>{{ event.vrsta_djelatnosti }} </td> 
+          <td>{{ event.datum}}</td> 
+          <td>
+          <form action="/obrisi_event/{{ event.id }}" method="post">
+            <span><button type="submit">Obriši event</button></span>
+          </form>
+        <br/>
+          <a href="{{ url_for('uredi_event', event_id=event.id) }}"><button>Uredi</button></a>
+        </td> 
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</details>
+
+  <h1>Sajmovi</h1>
+  <details>
+    <summary>
+      <span>Popis</span>
+  </summary>
+    <table>
+      <thead>
+          <tr>
+              <th>Naziv</th>
+              <th>Opis</th>
+              <th>Djelatnost</th>
+              <th>Datum</th>
+              <th>Akcije</th>
+          </tr>
+      </thead>
+      <tbody>
+    
+      {% for event in eventi %}
+      {% if event.vrsta_djelatnosti=="Sajam" %}
+      <tr>
+          <td>{{ event.naziv }} </td>
+          <td>{{ event.opis }} </td>
+          <td>{{ event.vrsta_djelatnosti }} </td> 
+          <td>{{ event.datum}}</td> 
+          <td>
+          <form action="/obrisi_event/{{ event.id }}" method="post">
+            <span><button type="submit">Obriši event</button></span>
+          </form>
+        <br/>
+          <a href="{{ url_for('uredi_event', event_id=event.id) }}"><button>Uredi</button></a>
+        </td> 
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </tbody>
+  </table>
+</details>
+
+  <h1>Ostalo</h1>
+  <details>
+    <summary>
+      <span>Popis</span>
+  </summary>
+  <table>
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Opis</th>
+            <th>Djelatnost</th>
+            <th>Datum</th>
+            <th>Akcije</th>
+        </tr>
+    </thead>
+    <tbody>
+  
+    {% for event in eventi %}
+    {% if event.vrsta_djelatnosti=="Ostalo" %}
+    <tr>
+        <td>{{ event.naziv }} </td>
+        <td>{{ event.opis }} </td>
+        <td>{{ event.vrsta_djelatnosti }} </td> 
+        <td>{{ event.datum}}</td> 
+        <td>
+        <form action="/obrisi_event/{{ event.id }}" method="post">
+          <span><button type="submit">Obriši event</button></span>
+        </form>
+      <br/>
+        <a href="{{ url_for('uredi_event', event_id=event.id) }}"><button>Uredi</button></a>
+      </td> 
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </tbody>
+</table>
+</details>
+</br>
+</br>
+</br>
+<footer class="futer1">
+  <p>Sustav za unos manifestacija</p>
+  <p>Izradila Marta Kralj</p>
+  <p>Online preddiplomski studij informatike (FIPU)</p>
+</footer>
+   </body>
+</html>

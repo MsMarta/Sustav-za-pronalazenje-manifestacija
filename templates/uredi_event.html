@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Uredi manifestaciju</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+</head>
+
+<body>
+   
+    <div class="forma_okvir">
+        <div class="forma">
+    <h1 class="naslov_forma">Uredi event</h1>
+    <form action="" method="post">
+        <label for="naziv">Naziv:</label>
+        <input type="text" name="naziv" value="{{ event.naziv }}" required/><br/>
+        <label for="opis">Opis:</label>
+        <input type="text" name="opis" value="{{ event.opis }}"/><br/>
+        <label for="vrsta_djelatnosti">Djelatnost:</label>
+        <select name="vrsta_djelatnosti" required>
+            <option value="Koncert" {% if event.vrsta_djelatnosti == 'Koncert' %}selected{% endif %}>Koncert</option>
+            <option value="Izložba" {% if event.vrsta_djelatnosti == 'Izložba' %}selected{% endif %}>Izložba</option>
+            <option value="Predavanje" {% if event.vrsta_djelatnosti == 'Predavanje' %}selected{% endif %}>Predavanje</option>
+            <option value="Sajam" {% if event.vrsta_djelatnosti == 'Sajam' %}selected{% endif %}>Sajam</option>
+            <option value="Ostalo" {% if event.vrsta_djelatnosti == 'Ostalo' %}selected{% endif %}>Ostalo</option>
+        </select><br/>
+        <label for="datum">Datum:</label>
+        <input type="date" name="datum" value="{{ event.datum.strftime('%Y-%m-%d') }}" required/><br/>
+        <br/>
+        <button type="submit">Spremi promjene</button>
+    </form>
+</div>
+<br/>
+    <a href="{{ url_for('index') }}">Povratak na početnu stranicu</a>
+</div>
+<br/>
+<br/>
+<br/>
+    <footer class="futer1">
+        <p>Sustav za unos manifestacija</p>
+        <p>Izradila Marta Kralj</p>
+        <p>Online preddiplomski studij informatike (FIPU)</p>
+    </footer>
+</body>
+
+</html>

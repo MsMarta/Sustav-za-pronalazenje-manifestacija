@@ -1,0 +1,116 @@
+body{
+    background-color: burlywood;
+}
+
+h1, h2{
+    color:beige;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.forma_okvir{
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.forma{
+    display: grid;
+    gap: 15px;
+}
+
+.forma label{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input[type="text"],
+input[type="date"],
+select
+{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button{
+    background-color: #000;
+    color: burlywood;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.dodaj{
+    background-color: #000;
+    color: burlywood;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.naslov_forma{
+    color:black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.futer1 {
+    background-color: rgb(184, 142, 89);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    margin-top: auto; 
+}
+
+.futer1 p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.futer2 {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0px;
+}
+
+.futer2 p {
+    margin: 5px 0;
+}
